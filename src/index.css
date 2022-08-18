@@ -1,70 +1,90 @@
+/********************************************************
+*                           ROOT                        *
+********************************************************/
 :root {
+  --main-color: #262626;
+  --main-border-color: #b3b3b3;
+  --main-border-color-primary: #197ccc;
+  --main-border-radius: 3px;
+  --main-bg-color: #fff;
+  --main-bg-color-primary: #248ce4;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color: var(--main-color);
+  background-color: var(--main-bg-color);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  margin: 20px 40px 40px 40px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/********************************************************
+*                         TABLE                         *
+********************************************************/
+table,
+tr,
+td {
+  border-collapse: collapse;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+td {
+  border-collapse: collapse;
+  padding: 5px 40px;
+  text-align: center;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+thead {
+  font-weight: 600;
+}
+
+/********************************************************
+*                    BEAUTY SCROLL BAR                  *
+********************************************************/
+@media (min-width: 100px) {
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(224, 224, 224, 1);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #f5f5f5;
+    background-color: #d9d9d9;
+    box-shadow: inset 0 0 8px rgba(12, 9, 9, 0.5) !important;
+  }
+}
+
+/********************************************************
+*                         ICON                          *
+********************************************************/
+i.edit {
+  background-image: url(../../../src/assets/images/icons/edit.png);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position-x: 15%;
+  background-position-y: 50%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+i.delete {
+  background-image: url(../../../src/assets/images/icons/delete.png);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position-x: 15%;
+  background-position-y: 50%;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+i:hover {
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }

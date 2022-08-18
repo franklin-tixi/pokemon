@@ -1,0 +1,19 @@
+input.text-field {
+  padding: 6px;
+  font-size: 16px;
+  border-width: 0px;
+  border-color: var(--main-border-color);
+  color: var(--main-color);
+  border-style: solid;
+  border-radius: 3px;
+  box-shadow: 0px 0px 2px rgb(64, 64, 64);
+}
+
+input.search {
+  background-image: url(./../../assets/images/icons/search.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position-x: 2%;
+  background-position-y: 50%;
+  padding-left: 32px;
+}

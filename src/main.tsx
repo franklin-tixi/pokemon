@@ -1,10 +1,15 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/";
+import App from "./App";
+import "./index.css";
+import "./components/button/AppButton.css";
+import "./components/dialog/AppFormDialog.css";
+import "./components/inputs/AppTextField.css";
+import "./components/table/AppTable.css";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
-)
+  </React.StrictMode>,
+  document.getElementById("root")
+);

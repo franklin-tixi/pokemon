@@ -1,0 +1,13 @@
+.form-crud {
+  align-items: center;
+  background: var(--main-bg-color);
+  border-color: var(--main-border-color);
+  border: solid;
+  border-radius: var(--main-border-radius);
+  height: auto;
+  justify-content: center;
+  left: 22%;
+  position: absolute;
+  top: 35%;
+  width: auto;
+}

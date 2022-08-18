@@ -1,0 +1,7 @@
+table.data-table > tbody > tr > td,
+table.data-table > thead > tr > td {
+  border: 1px solid var(--main-border-color);
+  border-collapse: collapse;
+  padding: 5px 50px;
+  text-align: center;
+}

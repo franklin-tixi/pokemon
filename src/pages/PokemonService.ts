@@ -1,4 +1,4 @@
-import { PokemonModel } from "@pages";
+import { PokemonModel } from "./PokemonModel";
 
 /**
  * Class to define the services and consume the pokemon api
@@ -27,7 +27,7 @@ export class PokemonService {
       fetch(`https://bp-pokemons.herokuapp.com/${pokemonID}`)
         .then((res) => res.json())
         .then((data) => resolve(new PokemonModel(data)))
-        .catch((error) => reject(error));
+        .catch((error) => reject(`No existe el pokemon id ${pokemonID}`));
     });
   }
 

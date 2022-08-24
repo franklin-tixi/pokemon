@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas AppFormDialog Debe realizar match con el snapshot 1`] = `
+<div>
+  <div
+    class="form-crud"
+  >
+    <form
+      aria-label="form"
+    >
+      <h4
+        style="text-align: center;"
+      />
+      <div
+        style="margin: 2rem; display: flex; justify-content: center;"
+      />
+      <div
+        style="margin-top: 2rem; margin-bottom: 2rem; display: flex; justify-content: center;"
+      >
+        <div>
+          <button
+            class="save"
+            style="margin-left: 1rem;"
+            type="submit"
+          >
+            Guardar
+          </button>
+        </div>
+        <div>
+          <button
+            class="cancel"
+            style="margin-left: 1rem;"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+`;

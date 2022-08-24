@@ -17,3 +17,8 @@ input.search {
   background-position-y: 50%;
   padding-left: 32px;
 }
+
+input[type="text"]:focus,
+input[type="url"]:focus {
+  outline: 3px solid var(--main-border-color-primary);
+}

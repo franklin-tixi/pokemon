@@ -1,4 +1,4 @@
-import { AppButton } from "./../button/AppButton";
+import { AppButton } from "@component";
 import { ReactNode } from "react";
 
 /**
@@ -19,6 +19,8 @@ interface Props<E extends Object> {
  * @returns
  */
 export function AppFormDialog<E extends Object>(props: Props<E>) {
+  console.log("on sumit desde testing");
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (props.onSubmit) {
@@ -31,7 +33,7 @@ export function AppFormDialog<E extends Object>(props: Props<E>) {
       {props.open && (
         <div className="form-crud">
           {/* FORM */}
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} aria-label="form">
             <h4 style={{ textAlign: "center" }}>{props.title}</h4>
             <div
               style={{

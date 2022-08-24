@@ -9,7 +9,8 @@ interface Props {
   name: string;
   value?: any;
   required?: boolean;
-  type?: "string" | "url";
+  type?: "string" | "url" | "text";
+  ariaLabel?: string;
 }
 
 /**
@@ -31,13 +32,14 @@ export function AppTextField(props: Props) {
           <label style={{ paddingRight: "1rem" }}>{props.label}</label>
         )}
         <input
+          aria-label={props.ariaLabel}
           placeholder={props.placeholder}
           required={props.required}
           className={props.className}
           style={{ marginRight: "1rem" }}
           onChange={handleOnChange}
           name={props.name}
-          type={props.type}
+          type={props.type || "text"}
           value={props.value}
         ></input>
       </div>

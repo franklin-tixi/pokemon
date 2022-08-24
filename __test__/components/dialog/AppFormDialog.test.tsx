@@ -1,47 +1,34 @@
+import { render, screen } from "@testing-library/react";
 import React from "react";
-import * as Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import { shallow, configure } from "enzyme";
-import { AppFormDialog } from "../../../src/components/dialog/AppFormDialog";
-import { expression } from "@babel/template";
-import { AppTextField } from "../../../src/components";
+import { AppFormDialog } from "../../../src/components/";
 
-configure({ adapter: new Adapter() });
+describe("Pruebas AppFormDialog", () => {
+  const title = "Titulo Pokemon";
+  const open: boolean = true;
 
-describe("Prueba componente AppFormDialog", () => {
-  test("Crear pokemon", () => {
+  test("Debe realizar match con el snapshot", () => {
     const mockCallBack = jest.fn();
-    const dialog = shallow(
-      <AppFormDialog
-        onClose={mockCallBack}
-        onSubmit={mockCallBack}
-        open
-        title="Nuevo Pokemon"
-      >
-        <AppTextField
-          name="name"
-          label="nombre"
-          value={"Pikachu"}
-          className="name"
-        />
-        <AppTextField
-          name="image"
-          label="Imagen"
-          value={
-            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-          }
-          className="image"
-        />
-      </AppFormDialog>
+    const { container } = render(
+      <AppFormDialog onClose={mockCallBack} open={open} />
     );
+    expect(container).toMatchSnapshot();
+  });
 
-    expect(dialog.find("h4").text()).toBe("Nuevo Pokemon");
-    expect(dialog.find(".name").prop("value")).toBe("Pikachu");
-    expect(dialog.find(".image").prop("value")).toBe(
-      "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png"
-    );
+  test("Debe de mostrar en titulo - Titulo Pokemon", () => {
+    const mockCallBack = jest.fn();
+    render(<AppFormDialog onClose={mockCallBack} title={title} open={open} />);
+    expect(screen.getByText(title)).toBeTruthy();
+  });
 
-    dialog.find(".save").simulate("click");
-    dialog.find(".cancel").simulate("click");
-    expect(mockCallBack.mock.calls.length).toEqual(1);
+  test("Debe de mostrar en titulo - en un h4", () => {
+    const mockCallBack = jest.fn();
+    render(<AppFormDialog onClose={mockCallBack} title={title} open={open} />);
+    expect(screen.getByRole("heading", { level: 4 })).toBeTruthy();
+  });
+
+  test("Debe contener 2 botones", () => {
+    const mockCallBack = jest.fn();
+    render(<AppFormDialog onClose={mockCallBack} title={title} open={open} />);
+    expect(screen.getAllByRole("button").length).toBe(2);
   });
 });

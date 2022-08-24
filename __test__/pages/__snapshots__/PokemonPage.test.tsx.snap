@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en PokemonPage Pagina inicio Pokemon 1`] = `
+<div>
+  <h3>
+    Listado de Pokemon
+  </h3>
+  <div
+    style="display: flex; justify-content: space-between;"
+  >
+    <div>
+      <input
+        aria-label="input-search"
+        class="search text-field"
+        name="search"
+        placeholder="Buscar"
+        style="margin-right: 1rem;"
+        type="text"
+        value=""
+      />
+    </div>
+    <div>
+      <button
+        class="btn-new"
+        style="margin-left: 1rem;"
+      >
+        Nuevo
+      </button>
+    </div>
+  </div>
+  <div
+    style="display: flex; justify-content: center; padding: 2rem;"
+  >
+    <table
+      class="data-table"
+    >
+      <thead>
+        <tr>
+          <td>
+            Nombre
+          </td>
+          <td>
+            Imagen
+          </td>
+          <td>
+            Ataque
+          </td>
+          <td>
+            Defensa
+          </td>
+          <td>
+            Acciones
+          </td>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</div>
+`;

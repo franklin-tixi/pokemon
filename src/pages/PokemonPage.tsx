@@ -111,33 +111,35 @@ export class PokemonPage extends CrudHelper<PokemonModel, State> {
               <td>Acciones</td>
             </tr>
           </thead>
-          <tbody>
-            {list.map((row, index) => (
-              <tr key={row.id}>
-                <td style={{ textAlign: "left" }}>{row.name}</td>
-                <td>
-                  <img src={row.image} height="50"></img>
-                </td>
-                <td style={{ textAlign: "left" }}>{row.attack}</td>
-                <td style={{ textAlign: "left" }}>{row.defense}</td>
-                <td style={{ textAlign: "center" }}>
-                  <i
-                    className="edit"
-                    onClick={() => this.toEdit(row, PokemonService.getByID)}
-                  ></i>
-                  <i
-                    className="delete"
-                    onClick={() => this.deletePokemon(row)}
-                  ></i>
-                </td>
-              </tr>
-            ))}
-            {list.length === 0 && this.state.search && (
-              <tr>
-                <td colSpan={5}>Busqueda sin resultados</td>
-              </tr>
-            )}
-          </tbody>
+          {list.length > 0 && (
+            <tbody>
+              {list.map((row, index) => (
+                <tr key={row.id}>
+                  <td style={{ textAlign: "left" }}>{row.name}</td>
+                  <td>
+                    <img src={row.image} height="50"></img>
+                  </td>
+                  <td style={{ textAlign: "left" }}>{row.attack}</td>
+                  <td style={{ textAlign: "left" }}>{row.defense}</td>
+                  <td style={{ textAlign: "center" }}>
+                    <i
+                      className="edit"
+                      onClick={() => this.toEdit(row, PokemonService.getByID)}
+                    ></i>
+                    <i
+                      className="delete"
+                      onClick={() => this.deletePokemon(row)}
+                    ></i>
+                  </td>
+                </tr>
+              ))}
+              {list.length === 0 && this.state.search && (
+                <tr>
+                  <td colSpan={5}>Busqueda sin resultados</td>
+                </tr>
+              )}
+            </tbody>
+          )}
         </AppTable>
 
         {/* DIALOG */}
@@ -162,6 +164,7 @@ export class PokemonPage extends CrudHelper<PokemonModel, State> {
               <tr>
                 <td>
                   <AppTextField
+                    ariaLabel="input-name"
                     className="text-field"
                     label="Nombre:"
                     name="name"
@@ -184,6 +187,7 @@ export class PokemonPage extends CrudHelper<PokemonModel, State> {
               <tr>
                 <td>
                   <AppTextField
+                    ariaLabel="input-url"
                     className="text-field"
                     label="Imagen:"
                     placeholder="url"

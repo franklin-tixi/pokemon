@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 
 /**
  * Page State
@@ -29,7 +29,7 @@ export class PageHelper<
   E extends Object, // Element
   S extends PageState<E>, // State
   P extends Object = {} // Props
-> extends React.Component<P, S> {}
+> extends Component<P, S> {}
 
 /**
  *

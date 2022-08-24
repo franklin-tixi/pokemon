@@ -24,14 +24,16 @@ export function AppCrudBar(props: Props) {
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         {/* INPUT SEARCH */}
         <AppTextField
+          ariaLabel="input-search"
           className="search text-field"
           placeholder="Buscar"
           onChange={props.onSearch}
           name="search"
+          type="text"
         />
         {/* BUTTON NEW */}
         <AppButton
-          className="add"
+          className="btn-new"
           label={LabelCrud.NEW}
           onClick={props.onClickAdd}
         />

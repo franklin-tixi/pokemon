@@ -3,3 +3,4 @@
  */
 export * from "./PokemonModel";
 export * from "./PokemonService";
+export * from "./PokemonPage";

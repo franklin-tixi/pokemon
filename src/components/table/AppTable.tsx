@@ -12,12 +12,8 @@ interface Props {
  */
 export function AppTable(props: Props) {
   return (
-    <>
-      <div
-        style={{ display: "flex", justifyContent: "center", padding: "2rem" }}
-      >
-        <table className="data-table">{props.children}</table>
-      </div>
-    </>
+    <div style={{ display: "flex", justifyContent: "center", padding: "2rem" }}>
+      <table className="data-table">{props.children}</table>
+    </div>
   );
 }
